@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you want to be together?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffd6f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 500px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeInUp 1s ease;
+            position: relative;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 20px 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+        button:hover {
+            background-color: #d44b8f;
+        }
+        .message {
+            color: #ff69b4;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 1s ease;
+        }
+        .flower {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-image: url('https://i.imgur.com/JvnrI8M.png');
+            background-size: cover;
+            animation: flowerDrizzle 15s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes flowerDrizzle {
+            0% {
+                transform: translateY(-100px) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(800px) rotate(360deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(1400px) rotate(720deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="animate__animated animate__heartBeat animate__infinite">Do you want to be together?</h1>
+        <p>Dear Faye,</p>
+        <p>From the moment I met you, you've captured my heart with your warmth, kindness, and beauty. Every moment spent with you feels like a dream, and I cherish each memory we've created together.</p>
+        <p>Today, I'm gathering all my courage to ask you something truly special. Faye, will you do me the honor of going out with me? I can't imagine my future without you by my side, and I promise to cherish and love you for eternity.</p>
+        <button onclick="showMessage('yes')">Yes, I'd love to!</button>
+        <button onclick="showMessage('no')">I'm sorry, I can't.</button>
+        <p class="message" id="yesMessage">❤️ Love youuu!</p>
+        <p class="message" id="noMessage">Dang, okay.</p>
+        <div class="flower"></div>
+    </div>
+
+    <script>
+        function showMessage(response) {
+            if (response === 'yes') {
+                document.getElementById('yesMessage').style.display = 'block';
+                document.getElementById('yesMessage').classList.add('animate__bounceIn');
+                document.getElementById('noMessage').style.display = 'none';
+            } else {
+                document.getElementById('noMessage').style.display = 'block';
+                document.getElementById('noMessage').classList.add('animate__bounceIn');
+                document.getElementById('yesMessage').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
